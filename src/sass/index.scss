@@ -1,0 +1,76 @@
+@use 'styles/bootstrap';
+@use 'helpers' as *;
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.page {
+    min-height: 100vh;
+    position: relative;
+}
+
+
+header {
+    color: $main-color;
+    background-color: $main-bg;
+    background-image: url(./pictures/cover.jpg);
+    background-size: cover;
+    background-position: center center;
+
+
+    .title {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        @include font-family('Fraunces', 134px, 165px);
+        text-align: center;
+        width: 100vw;
+        user-select: none;
+        overflow-wrap: break-word;
+
+    }
+
+    .scroll-down {
+        user-select: none;
+        position: absolute;
+        bottom: 2vh;
+        left: 50vw;
+
+        transform: translateX(-50%);
+        text-align: center;
+        text-transform: uppercase;
+
+        @include font-family('Barlow', 20px, 24px);
+        color: var(--bs-body-color);
+        text-decoration: none;
+
+
+        div {
+            margin-bottom: 2vh;
+        }
+
+        img {
+            filter: invert(80%);
+        }
+    }
+}
+
+footer {
+    background-color: $main-color;
+    color: $main-bg;
+}
+
+#we-are {
+    background-color: $second-bg;
+    color: $second-color;
+
+    @include md {
+        background-image: url(./pictures/bg-we-are.svg);
+        background-repeat: no-repeat;
+        background-position: -64px 64px;
+    }
+}

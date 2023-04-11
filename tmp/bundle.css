@@ -1,3 +1,78 @@
+:root {
+  --bs-body-color: #$main-color;
+}
 
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  min-height: 100vh;
+  position: relative;
+}
+
+header {
+  color: #222;
+  background-color: #fff;
+  background-image: url(./pictures/cover.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+header .title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-family: "Fraunces", sans-serif;
+  font-size: 134px;
+  line-height: 165px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  text-align: center;
+  width: 100vw;
+  user-select: none;
+  overflow-wrap: break-word;
+}
+header .scroll-down {
+  user-select: none;
+  position: absolute;
+  bottom: 2vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  color: var(--bs-body-color);
+  text-decoration: none;
+}
+header .scroll-down div {
+  margin-bottom: 2vh;
+}
+header .scroll-down img {
+  filter: invert(80%);
+}
+
+footer {
+  background-color: #222;
+  color: #fff;
+}
+
+#we-are {
+  background-color: #D21146;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  #we-are {
+    background-image: url(./pictures/bg-we-are.svg);
+    background-repeat: no-repeat;
+    background-position: -64px 64px;
+  }
+}
 
 /*# sourceMappingURL=bundle.css.map */
