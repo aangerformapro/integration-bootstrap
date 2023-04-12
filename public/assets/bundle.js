@@ -10,4 +10,9 @@ addEventListener('click', e => {
 
     }
 });
+
+
+document.querySelector('header .title');
+
+// typeList(elem, list, delay);
 //# sourceMappingURL=bundle.js.map
