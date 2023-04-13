@@ -55,6 +55,88 @@ header {
             filter: invert(80%);
         }
     }
+
+    .ico {
+        border-radius: 50%;
+        background-color: $main-color;
+        color: $main-bg;
+        @include sizer(36px);
+
+
+        &:hover {
+            border: 3px solid $second-bg;
+        }
+    }
+
+    @include md-down {
+
+        .collapse {
+            width: 100vw;
+            height: 100vh;
+
+            transform: translateX(-100vw);
+
+            transition-property: transform;
+
+            transition-duration: .75s;
+
+            transition-timing-function: ease-in-out;
+        }
+
+        .collapse.show,
+        .collapse.collapsing {
+
+
+            position: fixed;
+            z-index: 200;
+            background-color: $second-bg;
+
+            top: 0;
+            left: 0;
+
+            display: flex;
+            justify-content: center;
+
+
+            transform: translateX(0);
+
+
+            a {
+                color: $second-color;
+                @include font-family('Barlow', 50px, 60px);
+            }
+        }
+
+
+
+
+    }
+
+    @include md {
+        .nav-link:not(.ico) {
+
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                height: 5px;
+                left: 50%;
+                right: 50%;
+                background-color: $second-bg;
+                transition-property: left, right;
+                transition-duration: .5s;
+                transition-timing-function: ease-in-out;
+                bottom: -1rem;
+            }
+
+            &:hover::after {
+                left: 0;
+                right: 0;
+            }
+
+        }
+    }
 }
 
 footer {
@@ -103,18 +185,10 @@ footer {
 
 
         .picture img {
-            // max-width: 100%;
-
-            //height: 100%;
-            //  max-height: 452px;
             object-fit: cover;
             object-position: center center;
-
             height: 450px;
             width: 100%;
-
-
-
         }
 
         .dates {
@@ -127,6 +201,7 @@ footer {
 
 
         @include md {
+            background-color: #f3f3f3;
 
             &:nth-child(odd) {
                 color: $main-bg;
@@ -161,4 +236,52 @@ footer {
 
     @include font-family('Fraunces', 31px, 38.22px);
     text-transform: uppercase;
+}
+
+#blog {
+    h3 {
+        @include font-family('Barlow', 29px, 34.8px, 600);
+
+    }
+
+    .blog-component {
+
+        max-width: 350px;
+        cursor: pointer;
+
+        .picture {
+            height: 303px;
+
+            overflow: hidden;
+            border-radius: 0 89px 0 89px;
+            border: 6px solid transparent;
+
+            img {
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        h4 {
+            @include font-family('Fraunces', 20px, 25px);
+            color: $second-bg;
+        }
+
+        p {
+            @include font-family('Barlow', 14px, 25px);
+        }
+
+
+        &:hover {
+            .picture {
+                border-color: $second-bg;
+            }
+        }
+    }
+
+}
+
+
+.map-container {
+    height: 500px;
 }

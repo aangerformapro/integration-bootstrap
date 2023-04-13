@@ -57,6 +57,16 @@ header .scroll-down div {
 header .scroll-down img {
   filter: invert(80%);
 }
+header .ico {
+  border-radius: 50%;
+  background-color: #222;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+}
+header .ico:hover {
+  border: 3px solid #D21146;
+}
 
 footer {
   background-color: #222;
@@ -133,11 +143,112 @@ footer {
   text-transform: uppercase;
 }
 
+#blog h3 {
+  font-family: "Barlow", sans-serif;
+  font-size: 29px;
+  line-height: 34.8px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+#blog .blog-component {
+  max-width: 350px;
+  cursor: pointer;
+}
+#blog .blog-component .picture {
+  height: 303px;
+  overflow: hidden;
+  border-radius: 0 89px 0 89px;
+  border: 6px solid transparent;
+}
+#blog .blog-component .picture img {
+  object-fit: cover;
+  object-position: center;
+}
+#blog .blog-component h4 {
+  font-family: "Fraunces", sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  color: #D21146;
+}
+#blog .blog-component p {
+  font-family: "Barlow", sans-serif;
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+#blog .blog-component:hover .picture {
+  border-color: #D21146;
+}
+
+.map-container {
+  height: 500px;
+}
+
+@media (max-width: 768px) {
+  header .collapse {
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(-100vw);
+    transition-property: transform;
+    transition-duration: 0.75s;
+    transition-timing-function: ease-in-out;
+  }
+  header .collapse.show,
+  header .collapse.collapsing {
+    position: fixed;
+    z-index: 200;
+    background-color: #D21146;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transform: translateX(0);
+  }
+  header .collapse.show a,
+  header .collapse.collapsing a {
+    color: #fff;
+    font-family: "Barlow", sans-serif;
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+  }
+}
+
 @media (min-width: 768px) {
+  header .nav-link:not(.ico) {
+    position: relative;
+  }
+  header .nav-link:not(.ico)::after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    left: 50%;
+    right: 50%;
+    background-color: #D21146;
+    transition-property: left, right;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    bottom: -1rem;
+  }
+  header .nav-link:not(.ico):hover::after {
+    left: 0;
+    right: 0;
+  }
   #menu {
     background-image: url(./pictures/bg-we-are.svg);
     background-repeat: no-repeat;
     background-position: -64px 64px;
+  }
+  #we-are .article {
+    background-color: #f3f3f3;
   }
   #we-are .article:nth-child(odd) {
     flex-direction: row-reverse !important;
