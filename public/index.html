@@ -20,18 +20,19 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./assets/bundle.css">
     <script src="./assets/bundle.js" type="module" defer></script>
+    <link rel="shortcut icon" href="https://getbootstrap.com/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 
     <header class="page">
         <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
+            <div class="container-fluid d-flex justify-content-center justify-content-lg-start">
                 <a class="navbar-brand" href="#"><img src="./assets/pictures/ACS.svg" alt="ACS"></a>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="hamburger"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav align-items-center mb-2 mb-lg-0 ">
@@ -55,7 +56,7 @@
                             <a class="nav-link" href="#">Contact us</a>
                         </li>
 
-                        <li class="nav-item d-none d-md-flex">
+                        <li class="nav-item d-none d-lg-flex">
                             <a class="nav-link ico d-flex justify-content-center align-items-center mx-2" href="#">
                                 <img src="./assets/pictures/facebook.png" alt="facebook">
                             </a>
@@ -87,13 +88,14 @@
     <div id="menu" class="page ">
 
 
-        <div class="agency text-center user-select-none d-flex flex-column justify-content-center mb-5">
+        <div
+            class="agency text-center user-select-none d-flex flex-column justify-content-center align-items-center mb-5 pt-5">
             <div class="awesome">We are an awesome agency</div>
         </div>
 
         <div class="container">
             <div class="row">
-                <div id="carousel" class="carousel slide d-md-none">
+                <div id="carousel" class="carousel slide d-lg-none">
                     <div class="carousel-inner">
                         <div class="carousel-item  active">
                             <div
@@ -185,7 +187,7 @@
 
                 </div>
 
-                <div class="d-none d-md-flex justify-content-between">
+                <div class="d-none d-lg-flex justify-content-between">
 
                     <div
                         class="menu-item d-flex flex-column justify-content-between align-items-center text-center px-3 mx-5">
@@ -267,21 +269,21 @@
     <div id="we-are" class="page">
 
 
-        <div class="article d-flex flex-column flex-md-row">
+        <div class="article d-flex flex-column flex-lg-row">
 
-            <div class="picture col-md-6 overflow-hidden text-center">
+            <div class="picture col-lg-6 overflow-hidden text-center">
                 <img src="./assets/pictures/img01.jpg" alt="picture">
             </div>
             .
-            <div class="contents col-md-6 px-5">
-                <div class="dates pt-4">
+            <div class="contents col-lg-6 d-flex flex-column justify-content-center px-3 px-lg-5">
+                <div class="dates">
                     Mars 22, 2023 | <strong>In Général</strong>
                 </div>
 
-                <h2 class="my-4">
+                <h2 class="my-4 text-uppercase">
                     Lorem ipsum
                 </h2>
-                <p class="mb-4">
+                <p class="">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt sodales lectus ac
                     aliquam.
                     Fusce
@@ -300,21 +302,21 @@
 
 
         </div>
-        <div class="article d-flex flex-column flex-md-row">
+        <div class="article d-flex flex-column flex-lg-row">
 
-            <div class="picture col-md-6 overflow-hidden">
+            <div class="picture col-lg-6 overflow-hidden">
                 <img src="./assets/pictures/img02.jpg" alt="picture">
             </div>
             .
-            <div class="contents col-md-6 px-5">
-                <div class="dates pt-4">
+            <div class="contents col-lg-6 d-flex flex-column justify-content-center px-3 px-lg-5">
+                <div class="dates">
                     Mars 22, 2023 | <strong>In Général</strong>
                 </div>
 
-                <h2 class="my-4">
+                <h2 class="my-4 text-uppercase">
                     Lorem ipsum
                 </h2>
-                <p class="mb-4">
+                <p class="">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt sodales lectus ac
                     aliquam.
                     Fusce
@@ -339,14 +341,15 @@
     <div id="blog" class="page">
 
         <div class="container my-5">
-            <div class="blog-title d-flex flex-column justify-content-center text-uppercase text-center">
-                <div class="let-us">Let us tell you something</div>
+            <div
+                class="blog-title d-flex flex-column justify-content-center align-items-center text-uppercase text-center user-select-none">
+                <div class="let-us w-50">Let us tell you something</div>
             </div>
 
             <h3 class="text-center my-5">We love clean design and advanced digital solutions</h3>
 
-            <div class="row text-center">
-                <div class="col-md-3">
+            <div class="row text-center user-select-none">
+                <div class="col-lg-3">
                     <div class="blog-component d-flex flex-column mx-auto">
                         <div class="picture">
                             <img src="./assets/pictures/blog01.jpg" alt="picture" class="w-100 h-100">
@@ -367,7 +370,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3">
                     <div class="blog-component d-flex flex-column mx-auto">
                         <div class="picture">
                             <img src="./assets/pictures/blog02.jpg" alt="picture" class="w-100 h-100">
@@ -388,7 +391,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3">
                     <div class="blog-component d-flex flex-column mx-auto">
                         <div class="picture">
                             <img src="./assets/pictures/blog03.jpg" alt="picture" class="w-100 h-100">
@@ -409,7 +412,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3">
                     <div class="blog-component d-flex flex-column mx-auto">
                         <div class="picture">
                             <img src="./assets/pictures/blog01.jpg" alt="picture" class="w-100 h-100">
@@ -440,9 +443,9 @@
         <iframe class="w-100 h-100" frameborder="0"
             src="https://www.google.com/maps/embed/v1/place?q=2+Route+de+Montaigu,+Lons-le-Saunier,+France&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
     </div>
-    <footer class="d-flex flex-column flex-md-row justify-content-between text-center p-5">
+    <footer class="d-flex flex-column flex-lg-row justify-content-between text-center p-5 user-select-none">
         <div class="">
-            Copyright ACS Lons le Saunier - Tous droits réservés
+            Copyright &copy; ACS Lons le Saunier - Tous droits réservés
         </div>
 
         <div class="">

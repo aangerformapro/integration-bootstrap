@@ -1,19 +1,22 @@
-@use 'styles/bootstrap';
+//@use 'styles/bootstrap';
 @use 'helpers' as *;
 
 
 
-html {
+html
+{
     scroll-behavior: smooth;
 }
 
-.page {
+.page
+{
     min-height: 100vh;
     position: relative;
 }
 
 
-header {
+header
+{
     color: $main-color;
     background-color: $main-bg;
     background-image: url(./pictures/cover.jpg);
@@ -21,7 +24,8 @@ header {
     background-position: center center;
 
 
-    .title {
+    .title
+    {
         position: absolute;
         top: 50%;
         left: 0;
@@ -33,7 +37,15 @@ header {
 
     }
 
-    .scroll-down {
+
+    .nav-link
+    {
+        @include font-family('Barlow', 18px, 21.6px, 700);
+        color: $main-color;
+    }
+
+    .scroll-down
+    {
         position: absolute;
         bottom: 2vh;
         left: 50vw;
@@ -43,67 +55,149 @@ header {
         text-transform: uppercase;
 
         @include font-family('Barlow', 20px, 24px);
-        color: var(--bs-body-color);
+        color: $main-color;
         text-decoration: none;
 
 
-        div {
+        div
+        {
             margin-bottom: 2vh;
         }
 
-        img {
+        img
+        {
             filter: invert(80%);
         }
     }
 
-    .ico {
+    .ico
+    {
         border-radius: 50%;
         background-color: $main-color;
         color: $main-bg;
         @include sizer(36px);
 
 
-        &:hover {
+        &:hover
+        {
             border: 3px solid $second-bg;
         }
     }
 
-    @include md-down {
+    @include lg-down
+    {
 
-        .collapse {
+        .navbar-collapse
+        {
+            position: fixed;
+            z-index: 2;
             width: 100vw;
             height: 100vh;
-
-            transform: translateX(-100vw);
-
-            transition-property: transform;
-
-            transition-duration: .75s;
-
-            transition-timing-function: ease-in-out;
-        }
-
-        .collapse.show,
-        .collapse.collapsing {
-
-
-            position: fixed;
-            z-index: 200;
-            background-color: $second-bg;
-
             top: 0;
-            left: 0;
+            left: -100vw;
+            transition-property: left;
+            transition-duration: .5s;
+            transition-timing-function: ease-in-out;
 
+            background-color: $second-bg;
             display: flex;
             justify-content: center;
 
 
-            transform: translateX(0);
-
-
-            a {
-                color: $second-color;
+            .nav-link
+            {
+                color: $second-color !important;
                 @include font-family('Barlow', 50px, 60px);
+
+                &:hover
+                {
+                    font-weight: 600;
+
+                }
+            }
+
+
+            &.show
+            {
+                left: 0;
+            }
+
+
+        }
+
+        .hamburger
+        {
+
+            width: 40px;
+            position: absolute;
+            height: 3px;
+            background-color: $main-color;
+            right: 0;
+
+            transition: transform .5s ease-in-out, background-color .5s ease-in-out;
+
+            &::before,
+            &::after
+            {
+                position: absolute;
+                content: '';
+                height: 3px;
+                width: 40px;
+                top: -.75rem;
+                background-color: $main-color;
+                right: 0;
+
+                transition: transform .5s ease-in-out, background-color .5s ease-in-out;
+            }
+
+            &::after
+            {
+                top: .75rem;
+
+                transition: width .25s ease-in-out;
+            }
+        }
+
+        .navbar-toggler
+        {
+
+            box-shadow: none !important;
+            border: 0 !important;
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 3;
+            height: 40px;
+            position: absolute;
+            width: 40px;
+
+            &[aria-expanded="true"]
+            {
+
+
+                .hamburger
+                {
+
+                    transition: transform .5s ease-in-out, background-color .5s .75s ease-in-out;
+                    background-color: $main-bg;
+                    transform: rotate(45deg);
+
+                    &::after
+                    {
+                        width: 0;
+                    }
+
+                    &::before
+                    {
+                        transform: translateY(.75rem) rotate(90deg);
+                        background-color: $main-bg;
+                        transition: transform .5s ease-in-out, background-color .5s .75s ease-in-out;
+                    }
+
+
+
+
+                }
             }
         }
 
@@ -112,12 +206,15 @@ header {
 
     }
 
-    @include md {
-        .nav-link:not(.ico) {
+    @include lg
+    {
+        .nav-link:not(.ico)
+        {
 
             position: relative;
 
-            &::after {
+            &::after
+            {
                 content: '';
                 position: absolute;
                 height: 5px;
@@ -125,12 +222,13 @@ header {
                 right: 50%;
                 background-color: $second-bg;
                 transition-property: left, right;
-                transition-duration: .5s;
+                transition-duration: .25s;
                 transition-timing-function: ease-in-out;
-                bottom: -1rem;
+                bottom: -.75rem;
             }
 
-            &:hover::after {
+            &:hover::after
+            {
                 left: 0;
                 right: 0;
             }
@@ -139,7 +237,8 @@ header {
     }
 }
 
-footer {
+footer
+{
     background-color: $main-color;
     color: $main-bg;
 }
@@ -147,7 +246,8 @@ footer {
 
 
 
-.agency {
+.agency
+{
     color: $second-color;
     background-image: url(./pictures/logo-w.svg);
     background-repeat: no-repeat;
@@ -157,19 +257,23 @@ footer {
     text-transform: uppercase;
 }
 
-.menu-item {
+.menu-item
+{
     width: 240px;
 
-    .mi-title {
+    .mi-title
+    {
         @include font-family('Fraunces', 18px, 22.19px, 700);
     }
 }
 
-#menu {
+#menu
+{
     background-color: $second-bg;
     color: $second-color;
 
-    @include md {
+    @include lg
+    {
         background-image: url(./pictures/bg-we-are.svg);
         background-repeat: no-repeat;
         background-position: -64px 64px;
@@ -177,39 +281,53 @@ footer {
 }
 
 
-#we-are {
+#we-are
+{
     @include font-family('Barlow', 14px, 25px);
 
-    .article {
+    .article
+    {
 
 
 
-        .picture img {
+        .picture img
+        {
             object-fit: cover;
             object-position: center center;
             height: 450px;
             width: 100%;
         }
 
-        .dates {
+        .dates
+        {
 
-            strong {
+            strong
+            {
                 @include font-family('Barlow', 14px, 25.41px, 700, italic);
             }
 
         }
 
+        h2
+        {
+            @include font-family('Fraunces', 18px, 22.19px, 700);
 
-        @include md {
+        }
+
+
+        @include lg
+        {
             background-color: #f3f3f3;
 
-            &:nth-child(odd) {
+            &:nth-child(odd)
+            {
                 color: $main-bg;
                 background-color: $main-color;
                 flex-direction: row-reverse !important;
             }
 
-            .picture img {
+            .picture img
+            {
 
                 width: 100%;
 
@@ -227,7 +345,8 @@ footer {
 
 
 
-.blog-title {
+.blog-title
+{
     color: $main-color;
     background-image: url(./pictures/B.svg);
     background-repeat: no-repeat;
@@ -238,42 +357,51 @@ footer {
     text-transform: uppercase;
 }
 
-#blog {
-    h3 {
+#blog
+{
+    h3
+    {
         @include font-family('Barlow', 29px, 34.8px, 600);
 
     }
 
-    .blog-component {
+    .blog-component
+    {
 
         max-width: 350px;
         cursor: pointer;
 
-        .picture {
+        .picture
+        {
             height: 303px;
 
             overflow: hidden;
             border-radius: 0 89px 0 89px;
             border: 6px solid transparent;
 
-            img {
+            img
+            {
                 object-fit: cover;
                 object-position: center;
             }
         }
 
-        h4 {
+        h4
+        {
             @include font-family('Fraunces', 20px, 25px);
             color: $second-bg;
         }
 
-        p {
+        p
+        {
             @include font-family('Barlow', 14px, 25px);
         }
 
 
-        &:hover {
-            .picture {
+        &:hover
+        {
+            .picture
+            {
                 border-color: $second-bg;
             }
         }
@@ -282,6 +410,7 @@ footer {
 }
 
 
-.map-container {
+.map-container
+{
     height: 500px;
 }
