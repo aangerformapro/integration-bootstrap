@@ -290,6 +290,7 @@ footer {
   overflow: hidden;
   border-radius: 0 89px 0 89px;
   border: 6px solid transparent;
+  transition: border 0.5s ease-in-out;
 }
 #blog .blog-component .picture img {
   object-fit: cover;
